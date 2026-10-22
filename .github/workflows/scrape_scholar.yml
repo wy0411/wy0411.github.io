@@ -31,7 +31,8 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install scholarly
+        # scholarly is incompatible with bibtexparser>=2.0, so pin it to 1.x
+        run: pip install scholarly "bibtexparser<2.0.0"
 
       - name: Fetch publications from Google Scholar
         env:
