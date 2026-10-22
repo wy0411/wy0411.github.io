@@ -1,18 +1,10 @@
 # Authors
 
-Name Name:
-  name        : "Name Name"
-  uri         : "https://name.com"
-  email       : "name@name.com"
-  bio         : "This is the first name."
-  avatar      : "bio-photo-2.jpg"
-  twitter     : "name"
-  google_plus : "Name"
-
-Name2 Name2:
-  name        : "Name2 Name2"
-  email       : "name2@name2.com"
-  bio         : "I ordered what?"
-  avatar      : "bio-photo.jpg"
-  twitter     : "name2"
-  google_plus : "Name"
+Yi Wang:
+  name        : "Yi Wang"
+  uri         : "https://wy0411.github.io"
+  bio         : "Ph.D. candidate in computational biology at the National Genomics Data Center, China National Center for Bioinformation (CNCB), Chinese Academy of Sciences."
+  avatar      : "profile.png"
+  orcid       : "https://orcid.org/0009-0002-9397-0673"
+  googlescholar: "https://scholar.google.com/citations?user=8tJ1XRQAAAAJ&hl=en"
+  github      : "wy0411"
