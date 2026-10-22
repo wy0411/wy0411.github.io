@@ -1,0 +1,50 @@
+name: Scrape Google Scholar Publications
+
+# Runs the fetch_scholar.py script, generates/updates _publications/*.md,
+# and pushes the result so GitHub Pages rebuilds the /publications/ page.
+#
+# Triggers:
+#   1. Manually (Actions tab -> this workflow -> "Run workflow")
+#   2. Daily at 03:00 UTC
+#   3. Whenever scripts/fetch_scholar.py is edited on master
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'
+  push:
+    paths:
+      - 'scripts/fetch_scholar.py'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write          # allow the job to commit & push back to the repo
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install scholarly
+
+      - name: Fetch publications from Google Scholar
+        env:
+          # The `user=` part of https://scholar.google.com/citations?user=8tJ1XRQAAAAJ
+          SCHOLAR_ID: '8tJ1XRQAAAAJ'
+          # Optional: set CLEAN_OUTPUT: '1' to also delete stale .md files.
+          # Optional: set SCHOLARLY_PROXY: 'freeproxies' if Google blocks this IP.
+        run: python scripts/fetch_scholar.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _publications || true
+          git commit -m "Update publications from Google Scholar" || echo "No changes to commit"
+          git push
