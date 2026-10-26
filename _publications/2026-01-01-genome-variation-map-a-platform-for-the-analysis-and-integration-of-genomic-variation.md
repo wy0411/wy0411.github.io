@@ -7,5 +7,4 @@ excerpt: 'The Genome Variation Map (GVM; https://ngdc.cncb.ac.cn/gvm) serves as 
 date: 2026-01-01
 venue: 'Nucleic Acids Research'
 paperurl: 'https://academic.oup.com/nar/article-abstract/54/D1/D1208/8373954'
-citation: 'Xue Bai and Haixia Xie and Hong Luo and Siwei Ren and Bixia Tang and Cuiping Li and Yi Wang and Bo Xu and Zishan Wu and Dongmei Tian and Shuhui Song. &quot;Genome Variation Map: a platform for the analysis and integration of genomic variation.&quot; <i>Nucleic Acids Research</i>. 2026.'
 ---
