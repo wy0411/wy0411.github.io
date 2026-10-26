@@ -143,7 +143,7 @@ def render_publication(pub):
         lines.append(f"venue: '{html_escape(venue)}'")
     if paper_url:
         lines.append(f"paperurl: '{paper_url}'")
-    lines.append(f"citation: '{html_escape(citation)}'")
+    #lines.append(f"citation: '{html_escape(citation)}'")
     lines.append("---")
     lines.append("")
 
